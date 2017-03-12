@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11E74DA41E760A3100D89001 /* FISSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E74DA31E760A3100D89001 /* FISSentence.m */; };
 		26597E196C8FD1EFCC3542D3 /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = F6FAF44C9ADBD46B1607187F /* LaunchScreen.xib */; };
 		2840B5F1BD3D2BF1903BF269 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52E15CCACDD19D3F6BA2DD7 /* Foundation.framework */; };
 		29070F8F14621F57C7633941 /* libPods-unit_tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0988762905FC7087BA692328 /* libPods-unit_tests.a */; };
@@ -31,6 +32,8 @@
 		0988762905FC7087BA692328 /* libPods-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1A8291CA512245B71945FD /* main.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DC71991C1721B5F6D46A7D1 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		11E74DA21E760A2300D89001 /* FISSentence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISSentence.h; sourceTree = "<group>"; };
+		11E74DA31E760A3100D89001 /* FISSentence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISSentence.m; sourceTree = "<group>"; };
 		1AF032B5E13A5AE04649AAE6 /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		212DBAE49445BF4A2D751301 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		325CD6F0314B85CB8C0CD078 /* objc-fissentence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "objc-fissentence.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +102,8 @@
 			children = (
 				9747AFC1CEFF3C81F5C70287 /* FISAppDelegate.h */,
 				559E3338F3745BA4CFAD84BA /* FISAppDelegate.m */,
+				11E74DA21E760A2300D89001 /* FISSentence.h */,
+				11E74DA31E760A3100D89001 /* FISSentence.m */,
 				0DC71991C1721B5F6D46A7D1 /* Main.storyboard */,
 				8222666202D6947F77ECE0A6 /* Resources */,
 			);
@@ -220,7 +225,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FIS;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "The Flatiron School";
 			};
 			buildConfigurationList = 1D470DB71102B809C6E8350E /* Build configuration list for PBXProject "objc-fissentence" */;
@@ -309,6 +314,7 @@
 				5FDA21ED38E240D4C7579DE3 /* FISAppDelegate.m in Sources */,
 				26597E196C8FD1EFCC3542D3 /* LaunchScreen.xib in Sources */,
 				C2976F0EE5E5EEC67B92473E /* main.m in Sources */,
+				11E74DA41E760A3100D89001 /* FISSentence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,14 +412,20 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
@@ -454,15 +466,21 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
