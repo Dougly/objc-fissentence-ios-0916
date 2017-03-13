@@ -11,8 +11,8 @@
 @interface FISSentence : NSObject
 
 @property (strong, readonly) NSString *sentence;
-@property (strong, nonatomic) NSArray *words;
-@property (strong, nonatomic) NSArray *punctuation;
+@property (strong, nonatomic) NSMutableArray *words;
+@property (strong, nonatomic) NSString *punctuation;
 
 
 -(void)addWord:(NSString *)word;
