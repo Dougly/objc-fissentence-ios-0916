@@ -17,7 +17,7 @@
 
 -(void)addWord:(NSString *)word;
 
--(void)addWords:(NSString *)word withPunctuation:(NSString *)punctuation;
+-(void)addWords:(NSArray *)words withPunctuation:(NSString *)punctuation;
 
 -(void)removeWordAtIndex:(NSUInteger)index;
 

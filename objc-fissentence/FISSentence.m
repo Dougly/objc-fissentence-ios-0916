@@ -41,44 +41,78 @@
     
     if (word == nil || [word isEqualToString:@""] || [word isEqualToString:@" "] ){
         return NO;
-    } else {
-        return YES;
     }
+    return YES;
+    
 }
 
 -(BOOL)validPunctuation:(NSString *)punctuation {
+    NSArray *validPunctuation = @[@".",@",",@"!",@"?",@";",@":",@"-"];
+    for (NSString *p in validPunctuation) {
+        if ([p isEqualToString:punctuation]) {
+            return YES;
+        }
+    }
     return NO;
 }
 
 -(BOOL)validIndex:(NSUInteger)index {
+    if (self.words.count > index) {
+        return YES;
+    }
     return NO;
 }
 
 -(void)addWord:(NSString *)word {
-    if ([self validPunctuation:word]) {
+    if ([self validWord:word]) {
         [self.words addObject:word];
     }
     [self assembleSentence];
 }
 
--(void)addWords:(NSString *)word withPunctuation:(NSString *)punctuation {
+-(void)addWords:(NSArray *)words withPunctuation:(NSString *)punctuation {
+    if(words == nil || words.count == 0 || ![self validPunctuation:punctuation]) {
+        return;
+    }
     
+    for (NSString *word in words) {
+        if ([self validWord:word]) {
+            [self.words addObject:word];
+        }
+    }
+    if ([self validPunctuation:punctuation]) {
+        self.punctuation = punctuation;
+    }
+    
+    [self assembleSentence];
 }
 
 -(void)removeWordAtIndex:(NSUInteger)index {
-    
+    if ([self validIndex:index]) {
+        [self.words removeObjectAtIndex:index];
+    }
+    [self assembleSentence];
 }
 
 -(void)insertWord:(NSString *)word atIndex:(NSUInteger)index {
-    
+    if ([self validIndex:index] && [self validWord:word]) {
+        [self.words insertObject:word atIndex:index];
+    }
+    [self assembleSentence];
 }
 
 -(void)replacePunctuationWithPunctuation:(NSString *)punctuation {
-    
+    if ([self validPunctuation:punctuation]){
+        self.punctuation = punctuation;
+    }
+    [self assembleSentence];
 }
 
 -(void)replaceWordAtIndex:(NSUInteger)index withWord:(NSString *)word {
-    
+    if ([self validIndex:index] && [self validWord:word]) {
+        [self.words replaceObjectAtIndex:index withObject:word];
+    }
+    [self assembleSentence];
 }
 @end
 
